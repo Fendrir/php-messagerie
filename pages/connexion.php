@@ -13,13 +13,11 @@ if (isset($_POST["valider"])){
     $pwd = htmlspecialchars($_POST["password"]);
     $sql = sprintf('SELECT * FROM uti_utilisateur WHERE uti_pseudo = "%s" OR uti_password = "%s"', $pseudo, $pwd );
     $result_sql = $bdd->query($sql);
-
-
-    foreach ($result_sql as $key => $value) {
-        if ($value["uti_pseudo"] == $pseudo && $value["uti_password"] == $pwd) {
-            $_SESSION['identifier'] = $value["uti_pseudo"];
-            return header("Location: ?p=accueil");
-        }
+    $row = $result_sql->fetch();
+    if ($row["uti_pseudo"] == $pseudo && $row["uti_password"] == $pwd) {
+        $_SESSION['identifier'] = $row["uti_pseudo"];
+        $_SESSION['uti_oid'] = $row["uti_oid"];
+        header("Location: ?p=accueil");
     };
     echo "Identifiant ou mot de passe incorrect";
 };
