@@ -1,8 +1,7 @@
 <?php
-if(isset($_SESSION['identifier'])){
-    echo "envoi";
+if(isset($_SESSION['identifier']) && !empty($_SESSION['identifier'])){
+
 }else{
-    echo "Non identifier";
-    
-}
+    header("Location: ?p=connexion");
+};
 ?>

@@ -53,5 +53,7 @@ if(isset($_SESSION['identifier']) && !empty($_SESSION['identifier'])){
         INSERT INTO num_nn_uti_mes VALUE (%d, %d)', $receveur, $id_message );
         $bdd->query($sql_nouveau_num);
     };
+}else{
+    header("Location: ?p=connexion");
 };
 ?>

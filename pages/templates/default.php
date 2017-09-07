@@ -19,7 +19,7 @@
 ?>
                     <li><a href="?p=message">Message</a></li> 
                     <li><a href="?p=reception">Reception</a></li> 
-                    <li><a href="?p=envoi">Envoi</a></li> 
+                    <li><a href="?p=envoi">Envoyé</a></li> 
                     <li><a href="?p=nouveau">Nouveau</a></li>  
                     <li><a href="?p=utilisateur">Utilisateurs</a></li> 
 <?php

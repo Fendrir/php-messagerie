@@ -18,5 +18,7 @@ if(isset($_SESSION['identifier']) && !empty($_SESSION['identifier'])){
         echo "<h2>".$value["mes_date"]."</h2><br>";
         echo $value["mes_texte"]."<br>";
     };
+}else{
+    header("Location: ?p=connexion");
 };
 ?>

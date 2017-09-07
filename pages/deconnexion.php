@@ -4,6 +4,5 @@ if(isset($_SESSION['identifier']) && !empty($_SESSION['identifier'])){
     header("Location: ?p=connexion");
 }else{
     header("Location: ?p=connexion");
-}
-;
+};
 ?>
