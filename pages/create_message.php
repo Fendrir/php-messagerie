@@ -1,3 +1,6 @@
+<?php
+if(isset($_SESSION['identifier']) && !empty($_SESSION['identifier'])){
+    ?>
 <section class="container">
 <h1>Nouveau message</h1>
     <form action="" method="post">
@@ -43,20 +46,12 @@
     ///recuperation de l'id du dernier courrier
     $sql_id_dernier_message = 'SELECT mes_oid FROM mes_message ORDER BY mes_oid DESC limit 1;';
     $result_id_dernier_message = $bdd->query($sql_id_dernier_message);
-
     $row_id_message = $result_id_dernier_message->fetch();
-
-    // $row = $result_sql->fetch();
-
-
-
-
-
-    
     $id_message = $row_id_message['mes_oid']; 
     /// envoi a la table des destinataires
     $sql_nouveau_num = sprintf('
         INSERT INTO num_nn_uti_mes VALUE (%d, %d)', $receveur, $id_message );
         $bdd->query($sql_nouveau_num);
     };
+};
 ?>
